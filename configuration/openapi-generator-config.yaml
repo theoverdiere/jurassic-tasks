@@ -1,0 +1,8 @@
+generatorName: typescript-node
+inputSpec: ./src/api/api.yaml
+outputDir: ./generated/api
+skipValidateSpec: true
+globalProperty:
+  apiDocs: false
+  apiTests: false
+  # supportingFiles: .openapi-generator-ignore
