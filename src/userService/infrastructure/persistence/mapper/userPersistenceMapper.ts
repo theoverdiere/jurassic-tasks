@@ -8,7 +8,7 @@ export class UserPersistenceMapper {
       email: user.email,
       birthDate: user.birthDate,
       firstName: user.firstName,
-      lastName: user.lastName,
+      lastName: user.lastName
     };
 
     return userEntity;

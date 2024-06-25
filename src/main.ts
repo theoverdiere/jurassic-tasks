@@ -1,16 +1,11 @@
 import { NestFactory } from '@nestjs/core';
 import { AppModule } from './app.module';
-import * as fs from 'fs';
-import * as YAML from 'yaml';
+import { KeycloakConnectModule, KeycloakConnectOptions } from 'nest-keycloak-connect';
+import keycloakConfig from './configuration/keycloak.config';
 
   async function bootstrap() {
-    const app = await NestFactory.create(AppModule);
-    const file = fs.readFileSync('./src/api/api.yaml', 'utf8');
-    const swaggerDocument = YAML.parse(file);
-
-
-  
-  await app.listen(3000);
+    const app = await NestFactory.create(AppModule);  
+    await app.listen(3000);
 
 }
 
