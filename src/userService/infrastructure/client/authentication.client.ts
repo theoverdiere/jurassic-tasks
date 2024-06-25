@@ -7,27 +7,29 @@ export class KeycloakClient {
 
     const adminToken = await this.getAdminAccessToken();
 
-    await axios.post(
-      keycloakUrl,
-      {
-        username: email,
-        email: email,
-        enabled: true,
-        credentials: [
-          {
-            type: 'password',
-            value: password,
-            temporary: false,
-          },
-        ],
-      },
-      {
-        headers: {
-          Authorization: `Bearer ${adminToken}`,
-          'Content-Type': 'application/json',
-        },
-      },
-    )
+    console.log('adminToken', adminToken);
+
+    // await axios.post(
+    //   keycloakUrl,
+    //   {
+    //     username: email,
+    //     email: email,
+    //     enabled: true,
+    //     credentials: [
+    //       {
+    //         type: 'password',
+    //         value: password,
+    //         temporary: false,
+    //       },
+    //     ],
+    //   },
+    //   {
+    //     headers: {
+    //       Authorization: `Bearer ${adminToken}`,
+    //       'Content-Type': 'application/json',
+    //     },
+    //   },
+    // )
   }
 
 
@@ -39,7 +41,7 @@ export class KeycloakClient {
   private async getAdminAccessToken(): Promise<string> {
 
     const response = await axios.post(
-      'https://localhost:8080/auth/realms/master/protocol/openid-connect/token',
+      'http://localhost:8080/realms/jurassic_tasks/protocol/openid-connect/token',
       new URLSearchParams({
         grant_type: 'client_credentials',
         client_id: 'jurassic-tasks-backend',

@@ -17,15 +17,9 @@ export class UserRepository {
       throw new ConflictException('Unable to save the user in database. Email already used');
     }
 
-    console.log('user', user);
-
     const userEntity = UserPersistenceMapper.userToUserEntity(user);
 
-    console.log('userEntity', userEntity);
-
     const userEntityCreated = await this.userRepository.save(userEntity);
-
-    console.log('userEntityCreated', userEntityCreated);
 
     return UserPersistenceMapper.userEntityToUser(userEntityCreated);
   }

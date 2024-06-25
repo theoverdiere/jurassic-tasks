@@ -4,6 +4,7 @@ import { UserEntity } from "../entity/userEntity";
 export class UserPersistenceMapper {
 
   public static userToUserEntity(user: User): UserEntity {
+    
     const userEntity = {
       email: user.email,
       birthDate: user.birthDate,

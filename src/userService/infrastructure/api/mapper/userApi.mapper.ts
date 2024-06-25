@@ -5,6 +5,7 @@ import { CreateUserDto } from "../dto/createUser.dto";
 export class UserApiMapper {
 
   public static userToUserDTO(user: User): UserDto {
+
     const userDto = {
       email: user.email,
       birthDate: user.birthDate,
@@ -16,6 +17,7 @@ export class UserApiMapper {
   }
 
   public static userDtoToUser(userDto: UserDto): User {
+
     const user = {
       email: userDto.email,
       birthDate: userDto.birthDate,
@@ -28,14 +30,15 @@ export class UserApiMapper {
 
 
   public static createUserDtoToUser(createUserDto: CreateUserDto): User {
+
     const user = {
       email: createUserDto.email,
       birthDate: createUserDto.birthDate,
       firstName: createUserDto.firstName,
       lastName: createUserDto.lastName,
     };
-  
+
     return user;
   }
-  
+
 }

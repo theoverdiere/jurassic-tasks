@@ -1,5 +1,5 @@
-import { Entity, Column, Unique, Generated, PrimaryColumn, PrimaryGeneratedColumn } from 'typeorm';
 
+import { Entity, Column, Unique, PrimaryGeneratedColumn } from 'typeorm';
 
 @Unique(['email'])
 @Entity('user_entity')
